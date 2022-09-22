@@ -10,11 +10,11 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.USER_REQUEST:
+    case types.GET_USER_REQUEST:
       return { ...state, loading: true, error: false };
-    case types.USER_SUCCESS:
+    case types.GET_USER_SUCCESS:
       return { ...state, repos: action.payload, loading: false, error: false };
-    case types.USER_FAILURE:
+    case types.GET_USER_FAILURE:
       return { ...state, loading: false, error: true };
 
     case types.FOLLOWER_REQUEST:

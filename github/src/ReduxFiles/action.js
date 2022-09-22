@@ -3,18 +3,18 @@ import * as types from "./actionTypes"
 
 //getting Repos Actions
 export const userRequest = () => {
-  return { type: types.USER_REQUEST };
+  return { type: types.GET_USER_REQUEST };
 };
 
 export const userSuccess = (payload) => {
-  return { type: types.USER_SUCCESS, payload };
+  return { type: types.GET_USER_SUCCESS, payload };
 };
 
 export const userFailure = () => {
-  return { type: types.USER_FAILURE };
+  return { type: types.GET_USER_FAILURE };
 };
 
-export const userFunc = (user) => (dispatch) => {
+export const getUserData = (user) => (dispatch) => {
   dispatch(userRequest());
   axios
     .get(`https://api.github.com/users/${user}/repos`)
